@@ -10,6 +10,7 @@
             "pre-commit": "osascript -e 'tell app \"Finder\" to display dialog \"Pre commit!\"' ",
             "post-commit": "osascript -e 'tell app \"Finder\" to display dialog \"Post commit!\"' ",
             "pre-push": "osascript -e 'tell app \"Finder\" to display dialog \"Pre push!\"' ",
+            "post-update": "osascript -e 'tell app \"Finder\" to display dialog \"Post update!\"' ",
             "post-push": "osascript -e 'tell app \"Finder\" to display dialog \"Post push!\"' ",
             "pre-receive": "osascript -e 'tell app \"Finder\" to display dialog \"Pre receive!\"' ",
             "post-receive": "osascript -e 'tell app \"Finder\" to display dialog \"Post receive!\"' ",
