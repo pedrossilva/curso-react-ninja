@@ -7,14 +7,15 @@
     },
     "husky": {
         "hooks": {
-            "pre-commit": "osascript -e 'tell app \"Finder\" to display dialog \"Pre commit!\"' ",
-            "post-commit": "osascript -e 'tell app \"Finder\" to display dialog \"Post commit!\"' ",
+            "pre-commit": "echo \">>>>>>> pre-commit\" ",
+            "post-commit": "echo \">>>>>>> post-commit\" ",
             "post-update": "osascript -e 'tell app \"Finder\" to display dialog \"Post update!\"' ",
             "post-merge": "osascript -e 'tell app \"Finder\" to display dialog \"post-merge!\"' ",
             "pre-push": "osascript -e 'tell app \"Finder\" to display dialog \"Pre push!\"' ",
             "post-push": "osascript -e 'tell app \"Finder\" to display dialog \"Post push!\"' ",
             "pre-receive": "osascript -e 'tell app \"Finder\" to display dialog \"Pre receive!\"' ",
             "post-receive": "osascript -e 'tell app \"Finder\" to display dialog \"Post receive!\"' ",
+            "push-to-checkout": "osascript -e 'tell app \"Finder\" to display dialog \"push-to-checkout!\"' ",
             "...": "..."
         }
     },
