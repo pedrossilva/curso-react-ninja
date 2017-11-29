@@ -13,8 +13,8 @@
             "post-merge": "osascript -e 'tell app \"Finder\" to display dialog \"post-merge!\"' ",
             "pre-push": "osascript -e 'tell app \"Finder\" to display dialog \"Pre push!\"' ",
             "post-push": "osascript -e 'tell app \"Finder\" to display dialog \"Post push!\"' ",
-            "pre-receive": "osascript -e 'tell app \"Finder\" to display dialog \"Pre receive!\"' ",
             "post-receive": "osascript -e 'tell app \"Finder\" to display dialog \"Post receive!\"' ",
+            "pre-receive": "osascript -e 'tell app \"Finder\" to display dialog \"Pre receive!\"' ",
             "...": "..."
         }
     },
