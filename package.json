@@ -5,8 +5,8 @@
         "start": "node server.js",
         "test": "echo \"Error: no test specified\"",
         "precommit": "npm test",
-        "prepush": "npm run onPrePush",
-        "onPrePush": "echo \"prepush WOW!\""
+        "prepush": "echo \"prepush WOW!\" && exit 1",
+        "onPrePush": "echo \"prepush WOW!\" && exit 1"
     },
     "dependencies": {
         "react": "^16.1.1",
