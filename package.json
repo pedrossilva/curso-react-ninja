@@ -7,11 +7,9 @@
     },
     "husky": {
         "hooks": {
-            "pre-push": "osascript -e 'tell app \"Finder\" to display dialog \"Pre push!\"' ",
-            "post-push": "osascript -e 'tell app \"Finder\" to display dialog \"Post push!\"' ",
+            "pre-commit": "osascript -e 'tell app \"Finder\" to display dialog \"Pre commit!\"' ",
             "pre-receive": "osascript -e 'tell app \"Finder\" to display dialog \"Pre receive!\"' ",
             "post-receive": "osascript -e 'tell app \"Finder\" to display dialog \"Post receive!\"' ",
-            "pre-commit": "osascript -e 'tell app \"Finder\" to display dialog \"Pre commit!\"' ",
             "...": "..."
         }
     },
