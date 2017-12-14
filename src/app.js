@@ -1,4 +1,5 @@
-import * as React from "react";
+import * as React from 'react'
+import Title from './title'
 
 class App extends React.Component {
 
@@ -7,7 +8,11 @@ class App extends React.Component {
     }
 
     render() {
-        return <h1>Aplicação</h1>
+        return (
+            <div data-id={1}>
+                <Title name={'Pedro Silva'} />
+            </div>
+        )
     }
 }
 
