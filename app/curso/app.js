@@ -1,49 +1,97 @@
-import React, {Component} from "react"
-import Square from "./square";
-import {Button} from "./button";
-import {Timer} from "./timer";
+import React, { Component } from "react"
 
 export class App extends Component {
   constructor() {
     super()
-    console.log('constructor')
     this.state = {
-      time: 0,
-      showTimer: true
+      value: 'Valor inicial',
+      checked: false,
+      radioValue: null,
+      selectValue: '3',
+      textareaValue: 'textarea\nvalue',
+      showContent: false
     }
   }
 
-  componentWillMount() {
-    console.log('componentWillMount')
-  }
-
-  componentDidMount() {
-    console.log('componentDidMount')
-  }
-
   render() {
-    console.log('render')
     return (
       <div>
-        <Timer timer={this.state.time}/>
-        <button onClick={() => this.setState({time: this.state.time+10})}>
-          Change props
-        </button>
+        <label>
+          <input
+            type="checkbox"
+            checked={this.state.checked}
+            onChange={() => {
+              this.setState({
+                checked: !this.state.checked
+              }, () => {
+                this.setState({showContent: this.state.checked})
+              })
+            }}
+          /> Mostrar conteúdo
+        </label>
+
+        {this.state.showContent && <div>Olha eu aqui!</div>}
       </div>
     )
-    // return (
-    //   <div>
-    //     <Square color={this.state.color}/>
-    //
-    //     {['red', 'green', 'blue'].map(
-    //       (color, i) => (
-    //         <Button key={i} handleClick={() => this.setState({color})}>
-    //           {color}
-    //         </Button>
-    //       )
-    //     )}
-    //   </div>
-    // )
   }
+
+  // render() {
+  //   return (
+  //     <div>
+  //       <form
+  //         onSubmit={e => {
+  //           e.preventDefault()
+  //           console.log('event', e)
+  //         }}
+  //         onChange={e => {
+  //           console.log('name', e.target.name)
+  //           console.log('value', e.target.value)
+  //         }}
+  //       >
+  //         <input type="text" value={this.state.value} onChange={e => this.setState({value: e.target.value})} />
+  //
+  //         <hr/>
+  //
+  //         <label>
+  //           <input type="checkbox"
+  //                  checked={this.state.checked}
+  //                  onChange={e => this.setState({checked: !this.state.checked})} />
+  //           Checkbox [{this.state.checked ? 'true' : 'false'}]
+  //         </label>
+  //
+  //         <hr/>
+  //
+  //         <label>
+  //           <input type="radio" name="rd" value="1"
+  //                  checked={this.state.radioValue == '1'}
+  //                  onChange={e => this.setState({radioValue: e.target.value})} /> Radio 1
+  //         </label>
+  //         <label>
+  //           <input type="radio" name="rd" value="2"
+  //                  checked={this.state.radioValue == '2'}
+  //                  onChange={e => this.setState({radioValue: e.target.value})} /> Radio 2
+  //         </label>
+  //         [{this.state.radioValue}]
+  //
+  //         <hr/>
+  //
+  //         <select value={this.state.selectValue} onChange={e => this.setState({selectValue: e.target.value})}>
+  //           <option value="1">Opção 1</option>
+  //           <option value="2">Opção 2</option>
+  //           <option value="3">Opção 3</option>
+  //         </select>
+  //
+  //         <hr/>
+  //         <textarea name="textarea" value={this.state.textareaValue} onChange={e => this.setState({textareaValue: e.target.value})} />
+  //
+  //         <button type="submit">Enviar</button>
+  //
+  //       </form>
+  //
+  //       <hr/>
+  //       <pre>{JSON.stringify(this.state, null, 2)}</pre>
+  //     </div>
+  //   )
+  // }
 
 }
