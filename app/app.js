@@ -1,48 +1,47 @@
 import React, {Component} from 'react'
 import './app.css'
+import {AppContent} from "./components/app-content";
+import ajax from "@fdaciuk/ajax/dist/ajax.min";
 
 export class App extends Component {
   constructor(props) {
     super(props)
+    this.state = {
+      userinfo: null,
+      repos: [],
+      starreds: []
+    }
+  }
+
+  handleSearch(e) {
+    const value = e.target.value
+    const keyCode = e.which || e.keyCode
+    const ENTER = 13;
+    if(keyCode === ENTER) {
+      ajax().get(`https://api.github.com/users/${value}`)
+        .then(result => {
+          this.setState({
+            userinfo: {
+              username: result.name,
+              login: result.login,
+              repos: result.public_repos,
+              followers: result.followers,
+              following: result.following,
+              photo: result.avatar_url //'https://avatars3.githubusercontent.com/u/4964454?v=4'
+            }
+          })
+        })
+    }
   }
 
   render() {
     return (
-      <div className="app">
-        <div className="search">
-          <input type="search" placeholder="Digite o nome do usuário do Github"/>
-        </div>
-
-        <div className="user-info">
-          <img src="https://avatars3.githubusercontent.com/u/4964454?v=4" />
-          <h1 className="username">
-            <a href="https://github.com/pedrossilva">Pedro Silva</a>
-          </h1>
-        </div>
-
-        <div className="repos-info">
-          <ul>
-            <li>Repositórios: 9</li>
-            <li>Seguidores: 0</li>
-            <li>Seguindo: 4</li>
-          </ul>
-
-          <div className="actions">
-            <button>Ver repositórios</button>
-            <button>Ver favoritos</button>
-          </div>
-
-          <ul className="repos">
-            <h2>Repositórios:</h2>
-            <li><a href="#">Nome do repositório</a></li>
-          </ul>
-
-          <ul className="starred">
-            <h2>Favoritos:</h2>
-            <li><a href="#">Nome do repositório</a></li>
-          </ul>
-        </div>
-      </div>
+      <AppContent
+        userinfo={this.state.userinfo}
+        repos={this.state.repos}
+        starreds={this.state.starreds}
+        handleSearch={e => this.handleSearch(e)}
+      />
     )
   }
 }

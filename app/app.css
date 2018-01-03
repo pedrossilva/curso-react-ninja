@@ -13,3 +13,28 @@
 input, button {
     padding: 0.4em;
 }
+
+.user-info {
+
+}
+.user-info img {
+    width: 120px;
+    float: left;
+    margin: 0 15px 15px 0;
+}
+.username {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+.repos-info ul li {
+    list-style: none;
+}
+
+.actions {
+    clear: both;
+}
+.actions button {
+    width: 50%;
+    padding: 0.5em;
+}
