@@ -9,7 +9,7 @@ export class App extends Component {
     this.state = {
       userinfo: null,
       repos: [],
-      starreds: []
+      starred: []
     }
   }
 
@@ -34,13 +34,29 @@ export class App extends Component {
     }
   }
 
+  getRepos(type = 'repos') {
+    return e => {
+      ajax().get(`https://api.github.com/users/pedrossilva/${type}`)
+        .then(result => {
+          this.setState({
+            [type]: result.map(repo => ({
+              name: repo.name,
+              link: repo.html_url
+            }))
+          })
+        })
+    }
+  }
+
   render() {
     return (
       <AppContent
         userinfo={this.state.userinfo}
         repos={this.state.repos}
-        starreds={this.state.starreds}
+        starred={this.state.starred}
         handleSearch={e => this.handleSearch(e)}
+        getRepos={this.getRepos()}
+        getStarred={this.getRepos('starred')}
       />
     )
   }

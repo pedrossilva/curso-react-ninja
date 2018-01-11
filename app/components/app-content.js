@@ -6,12 +6,12 @@ import {Actions} from "./actions";
 import {Repos} from "./repos";
 import PropTypes from "prop-types";
 
-export const AppContent = ({userinfo, repos, starreds, handleSearch}) => {
+export const AppContent = ({userinfo, repos, starred, handleSearch, getRepos, getStarred}) => {
   return (
     <div className="app">
       <Search handleSearch={handleSearch}/>
       {!!userinfo && <UserInfo userinfo={userinfo}/>}
-      {!!userinfo && <Actions/>}
+      {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
 
       {!!repos.length &&
       <Repos
@@ -20,11 +20,11 @@ export const AppContent = ({userinfo, repos, starreds, handleSearch}) => {
         repos={repos}
       />}
 
-      {!!starreds.length &&
+      {!!starred.length &&
       <Repos
         className="starred"
         title="Favoritos: "
-        repos={starreds}
+        repos={starred}
       />}
 
     </div>
@@ -34,5 +34,5 @@ export const AppContent = ({userinfo, repos, starreds, handleSearch}) => {
 AppContent.propTypes = {
   userinfo: PropTypes.object,
   repos: PropTypes.array.isRequired,
-  starreds: PropTypes.array.isRequired
+  starred: PropTypes.array.isRequired
 }
