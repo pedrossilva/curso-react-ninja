@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './app.css'
+// import './src.css'
 import {AppContent} from "./components/app-content";
 import ajax from "@fdaciuk/ajax/dist/ajax.min";
 

@@ -1,17 +1,43 @@
-const path = require('path');
+'use strict'
+
+const path = require('path')
+const webpack = require('webpack')
+
+const HtmlPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const DashboardPlugin = require('webpack-dashboard/plugin')
 
 module.exports = {
-  entry: './app/index.js',
+  devtool: 'source-map',
+
+  entry: [
+    'babel-polyfill',
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/dev-server',
+    path.join(__dirname, 'src', 'index')
+  ],
+  // entry: './src/index.js',
   output: {
-    // path: './public',
-    path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js'
+    path: path.join(__dirname, 'dist'),
+    filename: '[name]-[hash].js',
+    publicPath: ''
   },
   devServer: {
     inline: true,
-    contentBase: './public',
+    contentBase: './dist',
     port: 3000
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin('[name]-[hash].css'),
+    new DashboardPlugin(),
+
+    new HtmlPlugin({
+      title: 'Curso React Ninja',
+      template: path.resolve(__dirname, './src/index-template-dev.html'), // Load a custom template (lodash by default see the FAQ for details)
+    })
+  ],
   module: {
     rules: [
       {
@@ -26,7 +52,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
+        use: ['style-loader', 'css-loader?modules']
       }
     ]
   }

@@ -1,10 +1,12 @@
 import React from 'react'
 
-import {Search} from "./search";
-import {UserInfo} from "./user-info";
-import {Actions} from "./actions";
-import {Repos} from "./repos";
-import PropTypes from "prop-types";
+import {Search} from "./search/index"
+import {UserInfo} from "./user-info"
+import {Actions} from "./actions"
+import {Repos} from "./repos"
+import PropTypes from "prop-types"
+import {Logo} from "./logo"
+import style from '../css/style.crp.css'
 
 export const AppContent = ({
   userinfo,
@@ -16,7 +18,8 @@ export const AppContent = ({
   getStarred
 }) => {
   return (
-    <div className="app">
+    <div className={style.app}>
+      <Logo></Logo>
       <Search isDisabled={isFetching} handleSearch={handleSearch}/>
       {isFetching && <div>Carregando ...</div>}
       {!!userinfo && <UserInfo userinfo={userinfo}/>}
