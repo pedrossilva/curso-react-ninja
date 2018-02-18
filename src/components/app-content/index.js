@@ -1,12 +1,12 @@
 import React from 'react'
-
-import {Search} from "./search/index"
-import {UserInfo} from "./user-info"
-import {Actions} from "./actions"
-import {Repos} from "./repos"
 import PropTypes from "prop-types"
-import {Logo} from "./logo"
-import style from '../css/style.crp.css'
+
+import {Search} from "components/search/index"
+import {UserInfo} from "components/user-info"
+import {Actions} from "components/actions"
+import {Repos} from "components/repos"
+import {Logo} from "components/logo"
+import style from 'css/style.crp.css'
 
 export const AppContent = ({
   userinfo,

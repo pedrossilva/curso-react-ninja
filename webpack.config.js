@@ -55,5 +55,12 @@ module.exports = {
         use: ['style-loader', 'css-loader?modules']
       }
     ]
+  },
+  resolve: {
+    alias: {
+      src: path.join(__dirname, 'src'),
+      components: path.join(__dirname, 'src', 'components'),
+      css: path.join(__dirname, 'src', 'css'),
+    }
   }
 }
