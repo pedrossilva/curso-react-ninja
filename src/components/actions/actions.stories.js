@@ -1,9 +1,13 @@
 'use strict'
 
-import { storiesOf } from '@storybook/react'
+import { storiesOf, action } from '@storybook/react'
 import React from 'react'
+import {Actions} from "./index";
 
-storiesOf('Div', module)
-  .add('first story', () => (
-    <div>Hello</div>
+storiesOf('Actions', module)
+  .add('Actions component', () => (
+    <Actions
+      getRepos={action('Get Repos')}
+      getStarred={action('Get Starred')}
+    />
   ))

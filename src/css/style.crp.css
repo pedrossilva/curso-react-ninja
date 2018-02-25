@@ -26,10 +26,3 @@ input, button {
     list-style: none;
 }
 
-.actions {
-    clear: both;
-}
-.actions button {
-    width: 50%;
-    padding: 0.5em;
-}
