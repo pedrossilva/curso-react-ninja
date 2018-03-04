@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-const Square = ({color = "red"}) => (
+const Square = ({color = 'red'}) => (
   <div style={{
     backgroundColor: color,
     height: '100px',
@@ -8,4 +8,4 @@ const Square = ({color = "red"}) => (
   }} />
 )
 
-export default Square;
+export default Square

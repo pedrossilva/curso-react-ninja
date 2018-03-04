@@ -5,10 +5,10 @@ import style from './search.css'
 export const Search = ({isDisabled, handleSearch}) => {
   return (
     <div className={style.search}>
-      <input type="search"
-             placeholder="Digite o nome do usuário do Github"
-             disabled={isDisabled}
-             onKeyUp={handleSearch}
+      <input type='search'
+        placeholder='Digite o nome do usuário do Github'
+        disabled={isDisabled}
+        onKeyUp={handleSearch}
       />
     </div>
   )

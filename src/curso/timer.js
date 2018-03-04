@@ -1,32 +1,31 @@
 import React, { Component } from 'react'
 
 export class Timer extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
       time: 0
     }
-    this.timer;
   }
 
   componentWillReceiveProps (nextProps) {
     console.log('componentWillReceiveProps timer', this.props, nextProps)
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
+  shouldComponentUpdate (nextProps, nextState) {
     // console.log('Should component update', nextProps, nextState)
-    return true;
+    return true
   }
 
-  componentWillUpdate(nextProps, nextState) {
+  componentWillUpdate (nextProps, nextState) {
     console.log('componentWillUpdate timer', nextProps, nextState)
   }
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate (prevProps, prevState) {
     console.log('componentDidUpdate timer', this.props, prevProps)
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.timer = setInterval(() => {
       this.setState({
         time: this.state.time + 1
@@ -34,12 +33,12 @@ export class Timer extends Component {
     }, 1000)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     console.log('componentWillUnmount timer')
     clearInterval(this.timer)
   }
 
-  render() {
+  render () {
     return <div>Timer: {this.state.time}</div>
   }
 }

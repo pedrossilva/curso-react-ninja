@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-export const Repos = ({className='', title='', repos=[]}) => (
+export const Repos = ({className = '', title = '', repos = []}) => (
   <div className={`repos-list ${className}`}>
     <h2>{title}</h2>
     <ul>

@@ -35,7 +35,7 @@ module.exports = {
 
     new HtmlPlugin({
       title: 'Curso React Ninja',
-      template: path.resolve(__dirname, './src/index-template-dev.html'), // Load a custom template (lodash by default see the FAQ for details)
+      template: path.resolve(__dirname, './src/index-template-dev.html') // Load a custom template (lodash by default see the FAQ for details)
     })
   ],
   module: {
@@ -60,7 +60,7 @@ module.exports = {
     alias: {
       src: path.join(__dirname, 'src'),
       components: path.join(__dirname, 'src', 'components'),
-      css: path.join(__dirname, 'src', 'css'),
+      css: path.join(__dirname, 'src', 'css')
     }
   }
 }

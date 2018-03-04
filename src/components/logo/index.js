@@ -27,5 +27,5 @@ export const Logo = () => {
     'eVZgoCIT5BuTrM0A2LnSrfoKNFTy0DCRjFtrigIZ6JewybT0DuS1sg/LU76sfQlqcxndqG1+aWJCo4CzGVpSYRuVMzyn75Rc7LAe5DY97EmOdE0' +
     'CXIoPkaUge4/UOAkR8naVBn0PZ30aVmcETe6QPH1LyznJf1ftKSlFsKnxPuf8zHnOe5YjFt1f+OOntkegAeNf3/xfHtfHlbamX1hkptqnMXPpJ/' +
     'Zbgd4tCWXJXx17E+AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA0OFfAQYAWu+pxCYp0dUAAAAASUVORK5CYII='
-  return <img src={img} alt=""/>
+  return <img src={img} alt='' />
 }

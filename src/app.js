@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 // import './src.css'
-import {AppContent} from "./components/app-content";
-import ajax from "@fdaciuk/ajax/dist/ajax.min";
+import ajax from '@fdaciuk/ajax/dist/ajax.min'
+import { AppContent } from 'src/components/app-content'
 
 export class App extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
     this.state = {
       userinfo: null,
@@ -12,7 +12,7 @@ export class App extends Component {
       starred: [],
       isFetching: false
     }
-    this.handleSearch = this.handleSearch.bind(this);
+    this.handleSearch = this.handleSearch.bind(this)
   }
 
   getGitHubApiUrl (username, type) {
@@ -21,12 +21,12 @@ export class App extends Component {
     return `https://api.github.com/users${internalUser}${internalType}`
   }
 
-  handleSearch(e) {
+  handleSearch (e) {
     const value = e.target.value
     const keyCode = e.which || e.keyCode
-    const ENTER = 13;
+    const ENTER = 13
 
-    if(keyCode === ENTER) {
+    if (keyCode === ENTER) {
       this.setState({isFetching: true})
       ajax().get(this.getGitHubApiUrl(value))
         .then(result => {
@@ -47,7 +47,7 @@ export class App extends Component {
     }
   }
 
-  getRepos(type = 'repos') {
+  getRepos (type = 'repos') {
     const userinfo = this.state.userinfo
     return e => {
       ajax().get(this.getGitHubApiUrl(userinfo.login, type))
@@ -62,7 +62,7 @@ export class App extends Component {
     }
   }
 
-  render() {
+  render () {
     return (
       <AppContent
         {...this.state}

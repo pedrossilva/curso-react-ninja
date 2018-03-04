@@ -37,7 +37,7 @@ module.exports = {
     new HtmlPlugin({
       title: 'Curso React Ninja',
       inject: false,
-      template: path.resolve(__dirname, './src/index-template.html'),
+      template: path.resolve(__dirname, './src/index-template.html')
     })
   ],
   module: {
@@ -57,8 +57,8 @@ module.exports = {
         exclude: /node_modules|\.crp\.css/,
         include: /src/,
         use: styles.extract({
-          fallback: "style-loader",
-          use: "css-loader?modules"
+          fallback: 'style-loader',
+          use: 'css-loader?modules'
         })
       },
       {
@@ -66,10 +66,10 @@ module.exports = {
         exclude: /node_modules/,
         include: /src/,
         use: crp.extract({
-          fallback: "style-loader",
-          use: "css-loader?modules"
+          fallback: 'style-loader',
+          use: 'css-loader?modules'
         })
-      },
+      }
       // {
       //   test: /\.css$/,
       //   exclude: /node_modules|(search|style)\.css/,

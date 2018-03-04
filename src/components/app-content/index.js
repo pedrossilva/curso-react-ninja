@@ -1,12 +1,12 @@
 import React from 'react'
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types'
 
-import {Search} from "components/search/index"
-import {UserInfo} from "components/user-info"
-import {Actions} from "components/actions"
-import {Repos} from "components/repos"
-import {Logo} from "components/logo"
+import {Logo} from 'components/logo'
 import style from 'css/style.crp.css'
+import { Search } from 'src/components/search'
+import { UserInfo } from 'src/components/user-info'
+import { Actions } from 'src/components/actions'
+import { Repos } from 'src/components/repos'
 
 export const AppContent = ({
   userinfo,
@@ -19,23 +19,24 @@ export const AppContent = ({
 }) => {
   return (
     <div className={style.app}>
-      <Logo></Logo>
-      <Search isDisabled={isFetching} handleSearch={handleSearch}/>
+      <Logo />
+
+      <Search isDisabled={isFetching} handleSearch={handleSearch} />
       {isFetching && <div>Carregando ...</div>}
-      {!!userinfo && <UserInfo userinfo={userinfo}/>}
+      {!!userinfo && <UserInfo userinfo={userinfo} />}
       {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
 
       {!!repos.length &&
       <Repos
-        className="repos"
-        title="Repositórios: "
+        className='repos'
+        title='Repositórios: '
         repos={repos}
       />}
 
       {!!starred.length &&
       <Repos
-        className="starred"
-        title="Favoritos: "
+        className='starred'
+        title='Favoritos: '
         repos={starred}
       />}
 

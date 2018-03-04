@@ -1,7 +1,7 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
 export class App extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
       value: 'Valor inicial',
@@ -13,12 +13,12 @@ export class App extends Component {
     }
   }
 
-  render() {
+  render () {
     return (
       <div>
         <label>
           <input
-            type="checkbox"
+            type='checkbox'
             checked={this.state.checked}
             onChange={() => {
               this.setState({
@@ -93,5 +93,4 @@ export class App extends Component {
   //     </div>
   //   )
   // }
-
 }
