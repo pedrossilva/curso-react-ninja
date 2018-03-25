@@ -18,6 +18,12 @@ module.exports = (storybookBaseConfig, configType) => {
     include: path.resolve(__dirname, '../')
   });
 
+  storybookBaseConfig.resolve = {
+    alias: {
+      utils: path.join(__dirname, '..', 'src', 'utils')
+    }
+  }
+
   // Return the altered config
   return storybookBaseConfig;
 };

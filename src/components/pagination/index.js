@@ -1,0 +1,15 @@
+'use strict'
+
+import React from 'react'
+import pagination from 'utils/pagination'
+import Page from './page'
+
+export const Pagination = ({ total, activePage, pageLink }) => (
+  <ul>
+    {pagination({ total, activePage }).map((page, index) => (
+      <li key={index}>
+        <Page page={page} pageLink={pageLink.replace('%page%', page)}></Page>
+      </li>
+    ))}
+  </ul>
+)
